@@ -19,7 +19,7 @@ class SearchState {
     return SearchState(
       isLoading: isLoading ?? this.isLoading,
       repositories: repositories ?? this.repositories,
-      errorMessage: errorMessage ,
+      errorMessage: errorMessage,
     );
   }
 }

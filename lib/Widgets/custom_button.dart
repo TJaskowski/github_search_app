@@ -32,43 +32,40 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: widget.onPressed,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
-        transform:
-            isPressed ? Matrix4.translationValues(2, 5, 0) : Matrix4.identity(),
+        transform: isPressed
+            ? Matrix4.translationValues(2, 5, 0)
+            : Matrix4.identity(),
         decoration: BoxDecoration(
-          color:  widget.color ,
+          color: widget.color,
           borderRadius: BorderRadius.circular(25),
-          boxShadow:
-              isPressed
-                  ? [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.4),
-                      offset: const Offset(-3, -3),
-                      blurRadius: 5,
-                    ),
-                    BoxShadow(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      offset: const Offset(3, 3),
-                      blurRadius: 5,
-                    ),
-                  ]
-                  : [
-                    BoxShadow(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      offset: const Offset(-3, -3),
-                      blurRadius: 5,
-                    ),
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.4),
-                      offset: const Offset(3, 3),
-                      blurRadius: 5,
-                    ),
-                  ],
+          boxShadow: isPressed
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.4),
+                    offset: const Offset(-3, -3),
+                    blurRadius: 5,
+                  ),
+                  BoxShadow(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    offset: const Offset(3, 3),
+                    blurRadius: 5,
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    offset: const Offset(-3, -3),
+                    blurRadius: 5,
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.4),
+                    offset: const Offset(3, 3),
+                    blurRadius: 5,
+                  ),
+                ],
         ),
         padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
-        child: Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: widget.child,
-        ),
+        child: Padding(padding: const EdgeInsets.all(2.0), child: widget.child),
       ),
     );
   }

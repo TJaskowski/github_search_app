@@ -4,7 +4,6 @@ class Repository {
   final String owner;
   final String url;
 
-  
   Repository({
     required this.name,
     required this.description,

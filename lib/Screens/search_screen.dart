@@ -38,24 +38,26 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('Find GitHub Repositories', style: TextStyle(
-              shadows: [
-                Shadow(
-                        offset:  Offset(-1, -1),
-                        blurRadius: 1,
-                 color: Colors.white.withValues(alpha: 0.2),
-            
-                ),
-                 Shadow(
-                 color: Colors.black.withValues(alpha: 0.4),
-                        offset: const Offset(1, 1),
-                        blurRadius: 1,
-                ),
-              ],
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(255, 118, 165, 202),
-            ),),
+            child: Text(
+              'Find GitHub Repositories',
+              style: TextStyle(
+                shadows: [
+                  Shadow(
+                    offset: Offset(-1, -1),
+                    blurRadius: 1,
+                    color: Colors.white.withValues(alpha: 0.2),
+                  ),
+                  Shadow(
+                    color: Colors.black.withValues(alpha: 0.4),
+                    offset: const Offset(1, 1),
+                    blurRadius: 1,
+                  ),
+                ],
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 118, 165, 202),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -68,16 +70,19 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CustomButton(onPressed: () {
+            child: CustomButton(
+              onPressed: () {
                 notifier.searchRepositories(_controller.text);
-              }, 
+              },
               color: const Color.fromARGB(255, 118, 165, 202),
-              child: const Text('Search')),
+              child: const Text('Search'),
+            ),
           ),
-          
-          if (state.isLoading) const CircularProgressIndicator(
-            color: Color.fromARGB(255, 44, 124, 221),
-          ),
+
+          if (state.isLoading)
+            const CircularProgressIndicator(
+              color: Color.fromARGB(255, 44, 124, 221),
+            ),
           if (state.errorMessage != null) Text('Error: ${state.errorMessage}'),
           Expanded(
             child: ListView.builder(

@@ -20,40 +20,49 @@ class DetailScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: CustomButton(onPressed: () {
-                Navigator.pop(context);
-              },
-              color: const Color.fromARGB(255, 118, 165, 202),
-              child: const Text('Back')),
+              child: CustomButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                color: const Color.fromARGB(255, 118, 165, 202),
+                child: const Text('Back'),
+              ),
             ),
-            Text( repo.name,
-            style: const TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: Colors.black87,
-      ),),
-            Text( 'Owner: ${repo.owner}',
-           style:  const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: Colors.blueGrey,
-      ),),
+            Text(
+              repo.name,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+            Text(
+              'Owner: ${repo.owner}',
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.blueGrey,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(24.0),
-              child: Text( 'Description: ${repo.description}',
-               style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.blueGrey,
-                    ),),
+              child: Text(
+                'Description: ${repo.description}',
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blueGrey,
+                ),
+              ),
             ),
-            Text('Url: ${repo.url}',
-             style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-        color: Colors.black87,
-      ),),
-
+            Text(
+              'Url: ${repo.url}',
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                color: Colors.black87,
+              ),
+            ),
           ],
         ),
       ),

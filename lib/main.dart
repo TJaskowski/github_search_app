@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gh_search_app/Screens/detail_screen.dart';
 import 'package:gh_search_app/Screens/search_screen.dart';
 
-
 void main() {
   runApp(ProviderScope(child: const MyApp()));
 }
@@ -13,21 +12,15 @@ void main() {
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
         '/search': (context) => const SearchScreen(),
         '/detail': (context) => const DetailScreen(),
       },
-      home:
-        SearchScreen(),
-        
-   
+      home: SearchScreen(),
     );
   }
 }
-
